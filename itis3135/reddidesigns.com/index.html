@@ -3,35 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reddi Designs | Home</title>
-    <link rel="icon" type="image/svg+xml" href="images/reddi-mark.svg">
+    <title>Reddi Designs | Services</title>
+    <link rel="icon" type="image/svg+xml" href="images/reddi-logo.svg">
     <style>
-        body { max-width:800px; margin:0 auto; padding:0 24px; background:#eaf0f4; color:#253f50; font-family:Arial,sans-serif; line-height:1.7; }
-        header { padding:44px 0 24px; border-bottom:2px solid #819cae; }
-        h1 { font-family:Verdana,sans-serif; line-height:1.2; margin:0 0 14px; font-size:clamp(2rem, 5vw, 2.7rem); }
-        h2 { font-family:Verdana,sans-serif; line-height:1.2; font-size:1.8rem; }
-        main { padding:20px 0 35px; }
-        figure { margin:24px 0; }
-        img { max-width:100%; height:auto; }
-        figcaption { font-style:italic; }
-        a, a:visited { color:#755015; text-underline-offset:3px; }
-        a:focus-visible { outline:3px solid #755015; outline-offset:4px; }
-        footer { border-top:1px solid #819cae; padding:20px 0 100px; }
-        @media (max-width:550px) { body { padding:0 20px; } }
+        /* Palette generated with Coolors: https://coolors.co/eec643-141414-eef0f2-0d21a1-011638 */
+        body { max-width:1000px; margin:0 auto; padding:0 24px; background:#011638; color:#eef0f2; font-family:Verdana,sans-serif; line-height:1.7; }
+        header { display:grid; grid-template-columns:96px 1fr; column-gap:24px; align-items:center; padding:40px 0 32px; }
+        header img { grid-column:1; grid-row:1 / 3; width:96px; max-width:100%; height:auto; }
+        h1 { grid-column:2; font-family:Georgia,serif; line-height:1.2; margin:0; font-size:clamp(1.55rem,5vw,3.2rem); }
+        header p { grid-column:2; margin:8px 0 0; color:#eec643; }
+        main { background:#eef0f2; color:#141414; padding:38px 42px; border-top:8px solid #eec643; }
+        h2 { font-family:Georgia,serif; line-height:1.2; color:#011638; font-size:clamp(1.8rem,4vw,2.4rem); margin:0 0 22px; }
+        h3 { font-family:Georgia,serif; line-height:1.2; color:#011638; font-size:1.5rem; margin:0 0 18px; }
+        p { margin:0 0 22px; }
+        section { margin-top:34px; }
+        ul { list-style-type:"◆  "; padding-left:24px; margin:0; }
+        li { margin-bottom:14px; padding-left:5px; }
+        li::marker { color:#0d21a1; }
+        main section:last-child { background:#eec643; padding:26px; border-left:6px solid #0d21a1; }
+        address { font-style:normal; overflow-wrap:anywhere; }
+        address p { margin:0 0 12px; }
+        address p:last-child { margin-bottom:0; }
+        a, a:visited { color:#eec643; text-underline-offset:4px; }
+        a:hover { text-decoration-thickness:3px; }
+        a:focus-visible { outline:3px solid #eec643; outline-offset:4px; }
+        footer { padding:28px 0 100px; text-align:center; font-size:0.9rem; }
+        footer p { margin:0 0 12px; }
+        @media (max-width:600px) {
+            body { padding:0 16px; }
+            header { grid-template-columns:64px 1fr; column-gap:14px; padding:28px 0; }
+            header img { width:64px; }
+            header p { font-size:0.85rem; }
+            main { padding:26px 22px; }
+            main section:last-child { padding:20px; }
+        }
     </style>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header><h1>Reddi Designs</h1><p><em>Thoughtful pages. Clear purpose.</em></p></header>
+    <header>
+        <h1>Reddi Designs</h1>
+        <img src="images/reddi-logo.svg" alt="Reddi Designs RD lettermark" width="96" height="96">
+        <p><em>Thoughtful pages. Clear purpose.</em></p>
+    </header>
     <main>
-        <h2>Home</h2>
-        <figure><img src="images/reddi-mark.svg" alt="RD lettermark for Reddi Designs" width="240" height="180"><figcaption>Reddi Designs</figcaption></figure>
-        <p>Reddi Designs is Neelesh Reddi's student web design identity. It brings together my interest in building useful tools and communicating ideas clearly.</p>
-        <p>My approach is to keep pages readable, navigation straightforward, and layouts usable on different screen sizes.</p>
+        <h2>Services</h2>
+        <p>Reddi Designs is Neelesh Reddi's fictional web design and consulting firm. We focus on helping small businesses, community organizations, and independent creators explain what they do through clear, useful websites. Our approach brings thoughtful design together with an interest in data and practical problem-solving.</p>
+        <section>
+            <h3>What Makes Us Different</h3>
+            <ul>
+                <li><strong>Clarity comes first.</strong> We organize content around the questions visitors need answered.</li>
+                <li><strong>Design with a purpose.</strong> Colors, type, and spacing reinforce a client's identity.</li>
+                <li><strong>Room for every screen.</strong> We plan layouts that adapt from phones to desktop computers.</li>
+                <li><strong>Accessibility from the start.</strong> We consider contrast, keyboard navigation, and meaningful image descriptions.</li>
+                <li><strong>Plain-language collaboration.</strong> We explain design decisions without burying clients in technical terms.</li>
+                <li><strong>Thoughtful handoffs.</strong> We keep files organized and explain how to make everyday content updates.</li>
+            </ul>
+        </section>
+        <section>
+            <h3>What We Can Build Together</h3>
+            <p>We can turn an idea into a focused portfolio, a small business website, or a clear landing page. Our services cover content planning, responsive HTML and CSS, useful JavaScript interactions, and a review of navigation and accessibility. Whether a client needs a fresh start or a more readable existing site, we work toward a page that helps visitors find information and take the next step.</p>
+        </section>
+        <section>
+            <h3>Contact Reddi Designs</h3>
+            <p>This is a fictional firm; the contact details below are examples.</p>
+            <address>
+                <p><strong>Phone:</strong> (202) 555-0147</p>
+                <p><strong>Email:</strong> hello@reddidesigns.example</p>
+                <p><strong>Address:</strong> 123 Pixel Lane, Suite 200<br>Imaginary City, NC 00000</p>
+            </address>
+        </section>
     </main>
     <footer>
-        <p>Designed by Reddi Designs ©2026</p>
-        <p><a href="https://validator.w3.org/check?uri=referer">Validate HTML</a> | <a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a></p>
+        <p>Page created by Reddi Designs ©2026</p>
+        <p><a href="https://validator.w3.org/check?uri=referer">Validate HTML</a> |
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a></p>
     </footer>
     <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" data-site="designfirm" defer></script>
 </body>
