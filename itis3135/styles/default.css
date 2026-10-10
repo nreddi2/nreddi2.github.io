@@ -1,0 +1,41 @@
+body {
+    max-width:1000px;
+    margin:0 auto;
+    padding:0 28px;
+    background:#f5f0e8;
+    color: #352a3b;
+    font-family:Verdana, sans-serif;
+    line-height:1.7;
+}
+header { padding:36px 0 22px; border-bottom:3px solid #b69555; }
+h1 { font-family:"Trebuchet MS", sans-serif; line-height:1.25; font-size:clamp(1.6rem, 4vw, 2.6rem); margin:0 0 12px; }
+header p { margin:0 0 18px; }
+nav { line-height:2.2; }
+a, a:visited { color:#704817; text-decoration-thickness:1px; text-underline-offset:4px; }
+a:hover { text-decoration-thickness:3px; }
+a:focus-visible { outline:3px solid #704817; outline-offset:4px; }
+nav a[aria-current="page"] { font-weight:bold; text-decoration-thickness:3px; }
+main { display:flow-root; padding:30px 0 36px; min-height:340px; }
+h2 { font-family:"Trebuchet MS", sans-serif; line-height:1.25; font-size:clamp(1.7rem, 4vw, 2rem); margin:0 0 26px; }
+h3 { font-family:"Trebuchet MS", sans-serif; line-height:1.25; font-size:1.35rem; margin:28px 0 14px; }
+h6 { font-family:"Trebuchet MS", sans-serif; line-height:1.25; font-size:clamp(1.05rem, 3.4vw, 1.85rem); text-align:center; margin:0 0 24px; }
+p { margin:0 0 20px; }
+figure { float:right; width:240px; max-width:100%; margin:0 0 28px 36px; text-align:center; }
+img { display:block; max-width:100%; height:auto; margin:0 auto; }
+figcaption { font-size:0.88rem; font-style:italic; margin-top:10px; }
+main:has(h6) figure { float:none; margin:0 auto 28px; }
+ul, ol { padding-left:26px; }
+li { margin-bottom:12px; }
+ol { margin-top:12px; }
+blockquote { clear:both; margin:30px 0 0; padding:24px 18px; background:#e9e0ee; text-align:center; }
+blockquote p { margin:0 0 8px; }
+blockquote p:last-child { margin:0; }
+footer { clear:both; border-top:1px solid #b69555; padding:22px 0 110px; text-align:center; font-size:0.88rem; }
+footer nav { margin-bottom:16px; }
+footer p { margin:0 0 10px; }
+@media (max-width:650px) {
+    body { padding:0 20px; }
+    header { padding-top:26px; }
+    figure { float:none; margin:0 auto 24px; }
+    footer nav { line-height:2.6; }
+}
