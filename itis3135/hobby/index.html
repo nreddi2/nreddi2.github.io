@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Neelesh Reddi's introduction to chess: what it is, where to play, and how to start thinking one move ahead.">
+    <title>Chess ♟ The Game of Chess</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <style>
+        * { box-sizing:border-box; }
+        html { background:#202723; }
+        body { max-width:1200px; margin:0 auto; padding:0 40px; background:#202723; color:#f2eadb; font-family:"Trebuchet MS", Arial, sans-serif; font-size:17px; line-height:1.65; }
+        a, a:visited { color:#efb07c; text-decoration:none; }
+        main p a, main li a, footer p:not(.validators) a { text-decoration:underline; text-underline-offset:4px; }
+        a:hover { text-decoration:underline; text-underline-offset:5px; }
+        a:focus-visible, button:focus-visible { outline:3px solid #efb07c; outline-offset:5px; }
+        header { padding:38px 0 25px; border-bottom:1px solid #788d7a; }
+        h1 { margin:0; font-family:Georgia, serif; font-size:2.8rem; font-weight:normal; letter-spacing:-1px; }
+        header > p { margin:2px 0 25px; color:#d0d7cd; }
+        nav { display:flex; align-items:center; flex-wrap:wrap; gap:7px 12px; }
+        nav a { padding:7px 4px; }
+        nav a[aria-current="page"] { color:#f2eadb; border-bottom:2px solid #efb07c; }
+        nav span { color:#a6baaa; font-size:.8rem; }
+        main { min-height:580px; padding:56px 0 50px; }
+        section { display:grid; grid-template-columns:1fr 1fr; gap:0 46px; align-items:start; }
+        section > :not(figure) { grid-column:1; }
+        section[hidden] { display:none; }
+        h2 { margin:0 0 24px; font-family:Georgia, serif; font-size:clamp(2rem,4.3vw,3.7rem); font-weight:normal; line-height:1.12; letter-spacing:-1px; }
+        h2:focus { outline:2px solid #efb07c; outline-offset:8px; }
+        h3 { margin:20px 0 8px; font-size:1.1rem; color:#efb07c; }
+        p { margin:0 0 20px; }
+        .lead { font-size:1.2rem; color:#f2eadb; }
+        section > p, section > ul, section > ol { color:#d0d7cd; }
+        li { margin-bottom:10px; }
+        ul, ol { padding-left:24px; margin:0 0 20px; }
+        strong { color:#f2eadb; }
+        figure { grid-column:2; grid-row:1 / span 8; margin:0; padding:12px; background:#2c3630; border:1px solid #536756; border-radius:18px; }
+        figure img { display:block; width:100%; height:auto; border-radius:10px; }
+        figcaption { margin:16px 8px 8px; font-size:.96rem; }
+        figure p { margin:10px 0 0; font-size:.82rem; color:#d0d7cd; line-height:1.55; }
+        .action { display:inline-block; justify-self:start; margin:6px 0 20px; padding:10px 18px; border:1px solid #efb07c; border-radius:4px; }
+        .action:hover { color:#202723; background:#efb07c; text-decoration:none; }
+        table { width:100%; border-collapse:collapse; font-size:.95rem; margin:4px 0 24px; }
+        caption { text-align:left; color:#efb07c; font-weight:bold; margin-bottom:8px; }
+        th, td { text-align:left; padding:12px 8px; border-bottom:1px solid #536756; vertical-align:top; }
+        th { color:#f2eadb; }
+        td { color:#d0d7cd; }
+        footer { padding:28px 0 44px; border-top:1px solid #788d7a; text-align:center; font-size:.9rem; }
+        footer p { margin:0 0 12px; }
+        footer p:last-child { margin-bottom:0; }
+        footer a { display:inline-block; }
+        .validators a { border:1px solid #788d7a; border-radius:4px; padding:7px 12px; margin:4px; }
+        .skip { position:absolute; top:-100px; left:20px; padding:10px; background:#f2eadb; color:#202723; z-index:10; }
+        .skip:focus { top:12px; color:#202723; }
+        @media (max-width:780px) {
+            body { padding:0 22px; }
+            header { padding-top:25px; }
+            nav { gap:3px 9px; }
+            main { padding:35px 0; }
+            section { grid-template-columns:1fr; }
+            section > :not(figure) { grid-column:1; }
+            figure { grid-column:1; grid-row:auto; margin-bottom:25px; }
+
+        }
+        @media (max-width:380px) {
+            body { padding:0 16px; font-size:16px; }
+            nav { gap:3px 6px; }
+            th, td { padding:10px 5px; }
+        }
+    </style>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- IDs connect section links and validator controls; classes distinguish lead text, action links, validator buttons, and the skip link. Decorative spans keep chess dividers out of screen-reader navigation. -->
+    <a class="skip" href="#main-content">Skip to Content</a>
+    <header>
+        <h1>Chess</h1>
+        <p><em>Take your time. Find your move.</em></p>
+        <nav aria-label="Chess sections">
+            <a href="#what" aria-current="page">Home</a> <span aria-hidden="true">♟</span>
+            <a href="#who">Who</a> <span aria-hidden="true">♟</span>
+            <a href="#when">When</a> <span aria-hidden="true">♟</span>
+            <a href="#where">Where</a> <span aria-hidden="true">♟</span>
+            <a href="#how">How</a> <span aria-hidden="true">♟</span>
+            <a href="#why">Why</a> <span aria-hidden="true">♟</span>
+            <a href="#ai-prompts">AI Prompts</a>
+        </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+        <section id="what" aria-labelledby="what-heading">
+            <h2 id="what-heading" tabindex="-1">The Game of Chess</h2>
+            <figure>
+                <img src="images/chess-board.svg" alt="A flat chessboard with an oversized knight and a pawn." width="800" height="600">
+                <figcaption>A small board leaves plenty of room for ideas.<p><em>AI illustration prompt: Create an original SVG illustration of a chessboard, knight, and pawn in charcoal, cream, and terracotta. Use simple shapes and a flat editorial style.</em></p></figcaption>
+            </figure>
+            <p class="lead">Sixty-four squares, two players, and a new decision on every turn.</p>
+            <p>Chess is a strategy game played on an eight-by-eight board. Each player starts with sixteen pieces. White moves first, then the players take turns. The goal is checkmate: attack the opposing king so there is no legal way to escape the attack.</p>
+            <p>The rules give you a starting point. The fun comes from choosing a plan, noticing a threat, and realizing that a quiet move can matter just as much as a capture.</p>
+            <ul>
+                <li><strong>Learn the pieces.</strong> Each one has a different way to move.</li>
+                <li><strong>Look at both sides.</strong> Your opponent gets a move too.</li>
+                <li><strong>Stay curious.</strong> A finished game leaves something to review.</li>
+            </ul>
+            <a class="action" href="#how">Learn the First Steps →</a>
+        </section>
+        <section id="who" aria-labelledby="who-heading" hidden>
+            <h2 id="who-heading" tabindex="-1">Who Is Behind the Board?</h2>
+            <figure>
+                <img src="images/chess-desk.svg" alt="A notebook and pencil beside a knight and pawn." width="800" height="600">
+                <figcaption>There is always another idea to explore.<p><em>AI illustration prompt: Draw a notebook, pencil, and chess pieces as a flat SVG illustration using the same charcoal, cream, and terracotta palette.</em></p></figcaption>
+            </figure>
+            <p class="lead">Hi, I'm Neelesh Reddi. Chess is one of my interests, alongside music and gaming.</p>
+            <p>I'm a third-year student at UNC Charlotte, majoring in Data Science and minoring in Software Development. I'm interested in machine learning and natural language processing, especially the challenge of making complicated information useful.</p>
+            <p>This site brings that curiosity to chess. It is a beginner-friendly introduction to the game, with ideas for getting started and making time to practice. You do not need a rating or a tournament background to explore it.</p>
+            <p>Start with the basics, try a game at a comfortable pace, and give yourself permission to make mistakes. The next position is another chance to think.</p>
+            <a class="action" href="#why">Why Spend Time With Chess? →</a>
+        </section>
+        <section id="when" aria-labelledby="when-heading" hidden>
+            <h2 id="when-heading" tabindex="-1">Make Time for a Game</h2>
+            <figure>
+                <img src="images/chess-clock.svg" alt="A two-sided chess clock with both displays set to fifteen minutes." width="800" height="600">
+                <figcaption>Choose a pace that leaves room to think.<p><em>AI illustration prompt: Create a flat SVG chess clock with two 15:00 displays and a pawn, matching the site illustrations.</em></p></figcaption>
+            </figure>
+            <p class="lead">Choose a session that fits the time you actually have.</p>
+            <p>Chess can fit into a short break or a longer evening. For learning, an unrushed game gives you room to check threats before moving. Leave time afterward to revisit one position instead of immediately starting another game.</p>
+            <table>
+                <caption>A Suggested Practice Rhythm</caption>
+                <thead><tr><th scope="col">Time Available</th><th scope="col">Try This</th></tr></thead>
+                <tbody>
+                    <tr><th scope="row">5–10 minutes</th><td>Work through one or two puzzles. Explain the idea before checking the answer.</td></tr>
+                    <tr><th scope="row">30–45 minutes</th><td>Play a 15-minute-per-side game, then revisit an important decision.</td></tr>
+                    <tr><th scope="row">An open evening</th><td>Play an untimed game with a friend and discuss it afterward.</td></tr>
+                </tbody>
+            </table>
+            <p>This is a sample routine, not a club schedule. With a clock, agree on the time control before starting. An increment adds time after each move, so leave extra room if you use one.</p>
+        </section>
+        <section id="where" aria-labelledby="where-heading" hidden>
+            <h2 id="where-heading" tabindex="-1">Find Your Place to Play</h2>
+            <figure>
+                <img src="images/chess-places.svg" alt="A computer, park bench, and chessboard show different places to play." width="800" height="600">
+                <figcaption>The setting changes; the game stays familiar.<p><em>AI illustration prompt: Create a flat SVG scene combining an online chess screen, a park bench, and a chessboard in the established palette.</em></p></figcaption>
+            </figure>
+            <p class="lead">A shared table or an online board is enough to get started.</p>
+            <p>Choose a place where both players can see the board clearly and finish without feeling rushed. A quiet spot helps when you want to think through a position.</p>
+            <ul>
+                <li><strong>At home:</strong> set up a board on a steady table and invite a friend to play.</li>
+                <li><strong>In a shared space:</strong> a study lounge or suitable library common area can work. Check the rules and keep conversations considerate.</li>
+                <li><strong>Outside:</strong> use a park table in comfortable weather. Bring pieces that will not blow over easily.</li>
+                <li><strong>Online:</strong> use <a href="https://lichess.org/">Lichess</a> to explore an online board, or start with its guided lessons.</li>
+            </ul>
+            <p>For an in-person group, check the organizer's current meeting details before you travel. This site does not list verified club times or venues.</p>
+            <a class="action" href="https://lichess.org/learn">Explore Lichess Chess Basics ↗</a>
+        </section>
+        <section id="how" aria-labelledby="how-heading" hidden>
+            <h2 id="how-heading" tabindex="-1">Make Your First Moves</h2>
+            <figure>
+                <img src="images/knight-moves.svg" alt="Knight on d4 with dots at b3, b5, c2, c6, e2, e6, f3, and f5." width="800" height="600">
+                <figcaption>An L-shaped move: two squares one way, then one sideways.<p><em>AI illustration prompt: Draw an accurate 8-by-8 board with a knight on d4 and mark all eight destinations on an otherwise empty board. Label its files and ranks.</em></p></figcaption>
+            </figure>
+            <p class="lead">Learn how the pieces move, then build a simple thinking routine.</p>
+            <ol>
+                <li><strong>Set up the board.</strong> Keep a light square at your lower-right corner. Put each queen on her own color, with the king beside her.</li>
+                <li><strong>Learn the movement rules.</strong> Rooks move straight; bishops move diagonally; queens combine both. Knights move in an L and can jump over pieces. Kings normally move one square. Pawns move forward but capture diagonally.</li>
+                <li><strong>Check before moving.</strong> Is your king safe? What did the opponent's last move threaten? Is the piece you want to move protected?</li>
+                <li><strong>Review one decision.</strong> After the game, find a move you were unsure about and consider another choice.</li>
+            </ol>
+            <p>The diagram shows all eight destinations for a knight on d4 on an otherwise empty board. A knight cannot land on a friendly piece, and every move must leave your own king safe.</p>
+            <p>This is a starting guide, not the full rulebook. Learn castling, pawn promotion, en passant, checkmate, and draws through the <a href="https://handbook.fide.com/chapter/E012023">FIDE Laws of Chess</a> and the <a href="https://lichess.org/learn">interactive Lichess lessons</a>.</p>
+        </section>
+        <section id="why" aria-labelledby="why-heading" hidden>
+            <h2 id="why-heading" tabindex="-1">More Than the Result</h2>
+            <figure>
+                <img src="images/chess-perspective.svg" alt="A king and knight face each other across a stylized chessboard." width="800" height="600">
+                <figcaption>A useful question: what does the other player want?<p><em>AI illustration prompt: Draw two contrasting chess pieces across a stylized board to suggest looking at a position from both sides. Keep the flat SVG style.</em></p></figcaption>
+            </figure>
+            <p class="lead">The result is one part of a game. The decisions are worth coming back for.</p>
+            <p>Chess gives you a clear set of rules without telling you which plan to choose. You can follow an idea, discover its weakness, and try something different next time. That makes even a familiar position interesting.</p>
+            <ul>
+                <li><strong>A satisfying puzzle:</strong> finding a move that solves two problems at once can be more memorable than a quick win.</li>
+                <li><strong>Another perspective:</strong> asking what your opponent wants changes how you look at the board.</li>
+                <li><strong>A shared experience:</strong> talking through a game afterward gives both players a chance to explain their ideas.</li>
+            </ul>
+            <p>A useful goal for a session is simple: leave with one idea you understand better. Winning is enjoyable, but a loss can still produce a position worth studying.</p>
+            <a class="action" href="#when">Plan a Practice Session →</a>
+        </section>
+        <section id="ai-prompts" aria-labelledby="ai-heading" hidden>
+            <h2 id="ai-heading" tabindex="-1">AI Prompts</h2>
+            <figure>
+                <img src="images/chess-process.svg" alt="A code window beside a rook represents the site-building process." width="800" height="600">
+                <figcaption>AI helped make the files; the prompts are documented here.<p><em>AI illustration prompt: Create a flat SVG illustration of a code window and a rook using the same palette as the chess site.</em></p></figcaption>
+            </figure>
+            <p>ChatGPT, accessed through Codex, helped write the HTML, embedded CSS, JavaScript, draft text, and original SVG illustrations for this site. Neelesh selected chess as the topic and supplied the personal details used in Who.</p>
+            <p>The prompts below summarize the assignment and implementation directions used during this collaboration; they are not a verbatim transcript. Each figure also records the specific illustration direction. The graphics were created as SVG code, without a separate image-generation model.</p>
+            <ol>
+                <li><strong>Structure:</strong> Build a standalone chess hobby site in itis3135/hobby with embedded CSS, no includes, and seven sections: Who, What, When, Where, How, Why, and AI Prompts. Give every section at least three content items and a captioned figure.</li>
+                <li><strong>Design:</strong> Use charcoal, terracotta, and cream, readable typography, a chess-piece divider, and consistent flat SVG illustrations. Make it visibly different from the course website.</li>
+                <li><strong>Navigation:</strong> Show Home first, display one section at a time, update the title and active link, support keyboard use, and preserve browser Back and Forward behavior.</li>
+                <li><strong>Content:</strong> Write a concise beginner's guide. Use the supplied background for Neelesh without inventing ratings, tournament results, or personal chess history. Label the practice routine as a suggestion.</li>
+                <li><strong>Checks:</strong> Test section switching, mobile layout, local assets, semantic HTML, CSS, accessibility, and the course validator. Fix issues without hiding checks.</li>
+            </ol>
+            <p>The FIDE rules and Lichess lessons linked in How provide references for learning the game. AI assistance does not replace checking those rules or reviewing this site's content before submission.</p>
+        </section>
+    </main>
+    <footer>
+        <p class="validators"><a id="html-check" href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fwebpages.charlotte.edu%2Fnreddi1%2Fitis3135%2Fhobby%2F">Validate HTML</a> <a id="css-check" href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwebpages.charlotte.edu%2Fnreddi1%2Fitis3135%2Fhobby%2F">Validate CSS</a> <a id="accessibility-check" href="https://wave.webaim.org/report#/https://webpages.charlotte.edu/nreddi1/itis3135/hobby/">Accessibility</a></p>
+        <p>Created by <a href="../reddidesigns.com/">Reddi Designs</a> ©2026</p>
+        <p><em>One position. A fresh perspective.</em></p>
+    </footer>
+    <script src="scripts/hobby.js"></script>
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>
+
+
+
