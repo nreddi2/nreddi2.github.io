@@ -9,19 +9,22 @@
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- These include placeholders are replaced by the shared components. -->
+    <!-- Include placeholders load the shared header and footer; IDs connect labels, navigation, and interactive feedback. -->
     <div data-include="components/header.html"></div>
     <main>
         <h2>Product Landing</h2>
-        <figure>
-            <img src="images/noble-raven.svg" alt="A plum-colored raven against an amber circle" width="240" height="240">
-            <figcaption>The Noble Raven, my course mascot.</figcaption>
-        </figure>
-        <p>This page will contain my product landing page project, introducing a product and highlighting its features.</p>
+        <figure><img src="images/club-queen.svg" alt="Stylized queen chess piece on an amber circle" width="240" height="240"><figcaption>The Raven Starter Kit: a concept for your first club night.</figcaption></figure>
+<p><strong>A board, a plan, and someone to play.</strong> The Noble Raven Starter Kit is a fictional beginner bundle for players who want a friendly introduction to chess. It brings the club's practice tools together in one portable set.</p>
+<p><a href="#kit-contents">Explore the Kit</a> | <a href="#interest">Preview an Interest Request</a></p>
+<section id="kit-contents"><h3>What Comes in the Kit</h3><ul><li>A foldable practice board and a complete 32-piece chess set.</li><li>Six illustrated piece cards with movement reminders.</li><li>A game notebook for recording moves and one lesson from each match.</li><li>A starter booklet with board setup and club-night etiquette.</li></ul><p>The <a href="cards.html">piece cards</a> and <a href="documentation.html">club guide</a> preview the learning material.</p></section>
+<section><h3>Built for First Games</h3><p>Start without a clock, keep the movement cards beside the board, and focus on spotting one threat at a time. The notebook turns a finished game into a small, achievable practice goal.</p><p>Bring the kit to a study break or a casual game night. It is meant for conversation and repeat practice, not a promise of a particular rating.</p></section>
+<section><h3>Concept Price</h3><p><strong>$35 for the complete starter bundle.</strong> This is a sample price for a class project. No products are sold, payments collected, or orders shipped through this page.</p><p>Prefer to use a board you already own? You can still explore the club's online cards and instructions.</p></section>
+<section id="interest"><h3>Try the Interest Form</h3><p>Preview a kit-interest request below. This demo does not send emails, create a mailing-list subscription, or store your details.</p><form id="kit-interest"><label for="kit-email">Email (required)</label><input type="email" id="kit-email" name="email" placeholder="you@example.com" autocomplete="email" required><button type="submit">Preview Interest Request</button><output id="kit-result" aria-live="polite"></output></form></section>
     </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/include-navigation.js"></script>
     <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/chess-club.js"></script>
     <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>

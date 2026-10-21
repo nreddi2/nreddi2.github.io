@@ -9,19 +9,31 @@
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- These include placeholders are replaced by the shared components. -->
+    <!-- Include placeholders load the shared header and footer; IDs connect labels, navigation, and interactive feedback. -->
     <div data-include="components/header.html"></div>
     <main>
         <h2>Inventory</h2>
-        <figure>
-            <img src="images/noble-raven.svg" alt="A plum-colored raven against an amber circle" width="240" height="240">
-            <figcaption>The Noble Raven, my course mascot.</figcaption>
-        </figure>
-        <p>This page will contain my inventory project, organizing items and their details in a readable table.</p>
+        <figure><img src="images/club-rook.svg" alt="Stylized rook chess piece on an amber circle" width="240" height="240"><figcaption>A small reading shelf for steady improvement.</figcaption></figure>
+<p>The Noble Raven reading shelf collects fictional club guidebooks, from first moves to endgames. These sample titles and reading statuses demonstrate a book inventory; they are not published books or real reviews.</p>
+<section><h3>Club Reading Shelf</h3>
+<label for="reading-filter">Show Books by Reading Status</label>
+<select id="reading-filter"><option value="all">All books</option><option>Read</option><option>In progress</option><option>To read</option></select>
+<p id="book-count" aria-live="polite">Showing 6 of 6 books.</p>
+<!-- This div uses the table-scroll class to provide keyboard-accessible horizontal scrolling on narrow screens. -->
+<div class="table-scroll" tabindex="0" role="region" aria-label="Club reading inventory">
+<table><caption>Noble Raven sample book inventory</caption><thead><tr><th scope="col">Title</th><th scope="col">Author</th><th scope="col">Topic</th><th scope="col">Status</th><th scope="col">Sample Rating</th></tr></thead>
+<tbody><tr data-status="Read"><th scope="row">First Moves at the Raven Table</th><td>Noble Raven Chess Club</td><td>Beginner</td><td>Read</td><td>5/5</td></tr>
+<tr data-status="In progress"><th scope="row">Forks, Pins, and Other Surprises</th><td>Noble Raven Chess Club</td><td>Tactics</td><td>In progress</td><td>Not rated</td></tr>
+<tr data-status="To read"><th scope="row">The Quiet Move Workbook</th><td>Noble Raven Chess Club</td><td>Strategy</td><td>To read</td><td>Not rated</td></tr>
+<tr data-status="To read"><th scope="row">Rook Endings After Hours</th><td>Noble Raven Chess Club</td><td>Endgames</td><td>To read</td><td>Not rated</td></tr>
+<tr data-status="Read"><th scope="row">A Calm Opening Repertoire</th><td>Noble Raven Chess Club</td><td>Openings</td><td>Read</td><td>4/5</td></tr>
+<tr data-status="Read"><th scope="row">The Post-Game Notebook</th><td>Noble Raven Chess Club</td><td>Game review</td><td>Read</td><td>5/5</td></tr></tbody></table></div>
+<p>The ratings represent sample club usefulness scores out of five. Unfinished books remain unrated.</p></section>
     </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/include-navigation.js"></script>
     <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/chess-club.js"></script>
     <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>

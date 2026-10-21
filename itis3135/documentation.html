@@ -9,19 +9,23 @@
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- These include placeholders are replaced by the shared components. -->
+    <!-- Include placeholders load the shared header and footer; IDs connect labels, navigation, and interactive feedback. -->
     <div data-include="components/header.html"></div>
     <main>
         <h2>Instructions</h2>
-        <figure>
-            <img src="images/noble-raven.svg" alt="A plum-colored raven against an amber circle" width="240" height="240">
-            <figcaption>The Noble Raven, my course mascot.</figcaption>
-        </figure>
-        <p>This page will contain my instructions project, with clear sections and navigation to help readers follow each step.</p>
+        <figure><img src="images/club-knight.svg" alt="Stylized knight chess piece on an amber circle" width="240" height="240"><figcaption>A repeatable routine for a friendly club game.</figcaption></figure>
+<p>This guide explains the Noble Raven Chess Club's game-night routine: set up a board, record moves, and review one useful lesson afterward. It is a practical starting point for new players.</p>
+<nav aria-label="Instructions sections"><a href="#setup">Set Up</a> | <a href="#notation">Record Moves</a> | <a href="#turn">Take a Turn</a> | <a href="#review">Review a Game</a> | <a href="#etiquette">Club Etiquette</a></nav>
+<section id="setup"><h3>Set Up the Board</h3><p>Place the board so each player has a light square in the near-right corner. White starts on ranks 1 and 2, and Black starts on ranks 8 and 7.</p><ol><li>Place rooks in the corners, then knights, then bishops.</li><li>Put each queen on a square matching her color, with the king beside her.</li><li>Fill the next rank with pawns. White moves first.</li></ol><p>Before starting, agree whether to use a clock and how much time each player receives.</p></section>
+<section id="notation"><h3>Record Moves</h3><p>Files run from <code>a</code> to <code>h</code>; ranks run from <code>1</code> to <code>8</code>. A square such as <code>e4</code> combines its file and rank.</p><ul><li><code>e4</code>: a pawn moves to e4.</li><li><code>Nf3</code>: a knight moves to f3; N distinguishes the knight from the king.</li><li><code>Bxe5</code>: a bishop captures on e5.</li><li><code>O-O</code>: kingside castling, when legal.</li><li><code>+</code> marks check and <code>#</code> marks checkmate.</li></ul><p>Add a move number before White's move and record Black's reply beside it. For example: <code>1. e4 e5 2. Nf3 Nc6</code>.</p></section>
+<section id="turn"><h3>Take a Thoughtful Turn</h3><p>Check your opponent's latest threat before choosing your own move. You cannot make a move that leaves your king in check.</p><ol><li>Look for checks, captures, and threats for both sides.</li><li>Choose a candidate move and imagine the opponent's strongest reply.</li><li>Check that your destination is safe before moving.</li></ol><p>Use the <a href="cards.html">piece cards</a> if you need a movement reminder. Castling, en passant, and promotion have additional rules to learn as you progress.</p></section>
+<section id="review"><h3>Review a Finished Game</h3><p>Choose one turning point rather than trying to explain every move. Discuss what each player noticed and what they missed.</p><ul><li>Write the move number and your original idea.</li><li>Find one alternative and explain its purpose.</li><li>Set a small practice goal for the next game.</li></ul><p>Use the <a href="inventory.html">reading shelf</a> to choose a topic that matches your goal, such as tactics or endgames.</p></section>
+<section id="etiquette"><h3>Keep Games Welcoming</h3><p>Agree on whether advice and takebacks are allowed before the game begins. Ask before offering advice during someone else's match.</p><p>Celebrate a clever idea without putting down the other player. When a rule is unclear, pause and look it up together before continuing.</p></section>
     </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/include-navigation.js"></script>
     <script src="scripts/HTMLInclude.min.js"></script>
+    
     <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>

@@ -9,19 +9,25 @@
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- These include placeholders are replaced by the shared components. -->
+    <!-- Include placeholders load the shared header and footer; IDs connect labels, navigation, and interactive feedback. -->
     <div data-include="components/header.html"></div>
     <main>
         <h2>Playing Cards</h2>
-        <figure>
-            <img src="images/noble-raven.svg" alt="A plum-colored raven against an amber circle" width="240" height="240">
-            <figcaption>The Noble Raven, my course mascot.</figcaption>
-        </figure>
-        <p>This page will contain my playing cards project, using a responsive layout to display a themed set of cards.</p>
+        <p>Meet the Noble Raven club's six strategy cards. Each card introduces a chess piece, its movement, and one idea to try in your next game.</p>
+<!-- The piece-cards class lays out the six related cards as a responsive grid. -->
+<section class="piece-cards" aria-label="Chess piece strategy cards">
+<article><img src="images/club-king.svg" alt="Stylized king chess piece on an amber circle" width="240" height="240"><h3>King</h3><p><strong>Protect the Captain</strong></p><p>Moves one square in any direction. Keep it safe: checkmate ends the game.</p><p>When attacked, look for a safe move, a capture, or a block.</p></article>
+<article><img src="images/club-queen.svg" alt="Stylized queen chess piece on an amber circle" width="240" height="240"><h3>Queen</h3><p><strong>The All-Rounder</strong></p><p>Moves any number of squares along a rank, file, or diagonal, without jumping over pieces.</p><p>Coordinate with another piece instead of attacking alone.</p></article>
+<article><img src="images/club-rook.svg" alt="Stylized rook chess piece on an amber circle" width="240" height="240"><h3>Rook</h3><p><strong>Own the Open File</strong></p><p>Moves horizontally or vertically as far as the path stays clear.</p><p>An open file gives a rook room to work.</p></article>
+<article><img src="images/club-bishop.svg" alt="Stylized bishop chess piece on an amber circle" width="240" height="240"><h3>Bishop</h3><p><strong>Watch the Diagonals</strong></p><p>Moves diagonally and stays on its starting square color for the whole game.</p><p>Look past the nearest square for long-range threats.</p></article>
+<article><img src="images/club-knight.svg" alt="Stylized knight chess piece on an amber circle" width="240" height="240"><h3>Knight</h3><p><strong>Find the Fork</strong></p><p>Moves two squares in one direction and one perpendicular to it. It can jump over pieces.</p><p>Look for a move that attacks two targets at once.</p></article>
+<article><img src="images/club-pawn.svg" alt="Stylized pawn chess piece on an amber circle" width="240" height="240"><h3>Pawn</h3><p><strong>Small Steps, Big Plans</strong></p><p>Moves forward one square and captures one square diagonally forward. Its first move can cover two clear squares.</p><p>A pawn reaching the far rank promotes to a queen, rook, bishop, or knight.</p></article>
+</section><p>Ready to practice? Read the <a href="documentation.html">club instructions</a>, then tell us what you want to learn in the <a href="survey.html">survey</a>.</p>
     </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/include-navigation.js"></script>
     <script src="scripts/HTMLInclude.min.js"></script>
+    
     <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>

@@ -9,19 +9,49 @@
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- These include placeholders are replaced by the shared components. -->
+    <!-- Include placeholders load the shared header and footer; IDs connect labels, navigation, and interactive feedback. -->
     <div data-include="components/header.html"></div>
     <main>
         <h2>Survey</h2>
-        <figure>
-            <img src="images/noble-raven.svg" alt="A plum-colored raven against an amber circle" width="240" height="240">
-            <figcaption>The Noble Raven, my course mascot.</figcaption>
-        </figure>
-        <p>This page will contain my responsive survey form project, with labeled questions and accessible form controls.</p>
+        <figure><img src="images/noble-raven.svg" alt="A plum-colored raven against an amber circle" width="240" height="240"><figcaption>Noble Raven Chess Club: think ahead, play together.</figcaption></figure>
+<p>Help shape Noble Raven Chess Club, my fictional club for casual games, puzzles, and friendly competition. Whether you are learning how the pieces move or already planning your next tournament, there is a seat for you.</p>
+<p>This practice survey previews your response on this page. It does not send or save personal information.</p>
+<form id="club-survey">
+    <fieldset><legend>Introduce Yourself</legend>
+        <label for="member-name">Name (required)</label>
+        <input id="member-name" name="memberName" type="text" placeholder="Your name" autocomplete="name" maxlength="80" required>
+        <label for="member-email">Email (required)</label>
+        <input id="member-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        <label for="experience-years">Years Playing Chess (optional, 0–100)</label>
+        <input id="experience-years" name="years" type="number" min="0" max="100" step="1" placeholder="0">
+        <label for="member-background">A Little About You (optional)</label>
+        <textarea id="member-background" name="background" rows="3" maxlength="600" placeholder="Your interests, area of study, or what brought you to chess"></textarea>
+    </fieldset>
+    <fieldset><legend>Your Chess Preferences</legend>
+        <label for="experience-level">Playing Level</label>
+        <select id="experience-level" name="level"><option value="new">Learning the rules</option><option value="casual">Casual player</option><option value="club">Regular club player</option><option value="competitive">Tournament player</option></select>
+        <fieldset><legend>Preferred Game Speed</legend>
+            <label><input type="radio" name="speed" value="relaxed" checked> Relaxed, without a clock</label>
+            <label><input type="radio" name="speed" value="rapid"> Rapid: time to think</label>
+            <label><input type="radio" name="speed" value="blitz"> Blitz: quick decisions</label>
+        </fieldset>
+        <fieldset><legend>Activities You Would Try (choose any)</legend>
+            <label><input type="checkbox" name="activities" value="Puzzles"> Tactics puzzles</label>
+            <label><input type="checkbox" name="activities" value="Lessons"> Beginner lessons</label>
+            <label><input type="checkbox" name="activities" value="Game reviews"> Reviewing games together</label>
+            <label><input type="checkbox" name="activities" value="Casual matches"> Casual matches</label>
+        </fieldset>
+        <label for="member-goal">What Would You Like to Learn?</label>
+        <textarea id="member-goal" name="goal" rows="4" maxlength="800" placeholder="For example, spotting forks or staying calm under time pressure"></textarea>
+    </fieldset>
+    <button type="submit">Preview My Response</button> <button type="reset">Reset Survey</button>
+    <output id="survey-result" aria-live="polite"></output>
+</form>
     </main>
     <div data-include="components/footer.html"></div>
     <script src="scripts/include-navigation.js"></script>
     <script src="scripts/HTMLInclude.min.js"></script>
+    <script src="scripts/chess-club.js"></script>
     <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>
