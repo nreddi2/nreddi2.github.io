@@ -6,35 +6,50 @@
     <title>Neelesh Reddi | Welcome</title>
     <link rel="icon" type="image/svg+xml" href="images/neelesh-favicon.svg">
     <style>
+        * { box-sizing:border-box; }
         body {
-            max-width:960px;
+            max-width:1120px;
             margin:0 auto;
-            padding: 0 28px;
-            background-color:#eaf6ee;
-            color: #263f38;
+            padding:0 36px;
+            background:#eaf6ee;
+            color:#263f38;
             font-family:Arial, sans-serif;
-            line-height:1.7;
+            line-height:1.75;
         }
-        header { padding:42px 0 24px; border-bottom:2px solid #a7c8b4; }
-        h1 { font-family:Georgia, serif; line-height:1.2; font-size:3rem; margin:0 0 10px; }
-        header p { margin:0; color:#47665b; letter-spacing:0.08em; }
-        main { display:flow-root; padding:32px 0 38px; }
-        h2 { font-family:Georgia, serif; line-height:1.2; font-size:2rem; margin:0 0 24px; }
-        h3 { font-family:Georgia, serif; line-height:1.2; font-size:1.3rem; margin:28px 0 10px; }
-        p { margin: 0 0 18px; }
-        figure { float:right; width:320px; margin:0 0 24px 40px; }
+        header { padding:48px 0 26px; border-bottom:1px solid #a7c8b4; }
+        h1 { font-family:Georgia, serif; line-height:1.2; font-size:2rem; margin:0 0 10px; }
+        header p { margin:0; color:#47665b; }
+        main { padding:48px 0; }
+        h2 { font-family:Georgia, serif; line-height:1.2; font-size:clamp(2.65rem, 5vw, 3.5rem); margin:0 0 24px; }
+        h3 { font-family:Georgia, serif; line-height:1.2; font-size:1.85rem; margin:0 0 20px; }
+        h4 { font-family:Georgia, serif; line-height:1.2; font-size:1.3rem; margin:0 0 14px; }
+        p { margin:0 0 18px; }
+        main > p:first-of-type { font-size:1.25rem; }
+        figure { float:right; width:300px; margin:0 0 40px 64px; }
         img { display:block; max-width:100%; height:auto; }
-        figcaption { margin-top:10px; font-size:0.9rem; color:#47665b; font-style:italic; }
+        figcaption { margin-top:12px; font-size:0.9rem; font-style:italic; color:#47665b; }
+        section { clear:both; border-top:1px solid #a7c8b4; margin-top:48px; padding-top:32px; }
+        section > p { max-width:780px; }
+        .experience { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+        .experience h3 { grid-column:1 / -1; margin-bottom:0; }
+        article { background:#dceee2; padding:28px; border-left:3px solid #47665b; }
+        article p:last-child { margin-bottom:0; }
         a, a:visited { color:#75451f; text-decoration-thickness:2px; text-underline-offset:4px; }
         a:hover { text-decoration-thickness:3px; }
         a:focus-visible { outline:3px solid #75451f; outline-offset:5px; }
-        footer { border-top:1px solid #a7c8b4; padding:22px 0 100px; font-size:0.9rem; }
+        ul { padding-left:22px; }
+        li { margin-bottom:10px; }
+        nav { display:flex; flex-wrap:wrap; gap:12px 26px; }
+        footer { border-top:1px solid #a7c8b4; padding:24px 0 100px; font-size:0.9rem; }
         footer p { margin:0 0 6px; }
-        @media (max-width:680px) {
+        @media (max-width:700px) {
             body { padding:0 22px; }
             header { padding-top:30px; }
-            figure { float:none; width:320px; max-width:100%; margin:0 0 24px; }
-            main { padding-top:26px; }
+            main { padding-top:32px; }
+            figure { float:none; width:260px; max-width:100%; margin:0 0 28px; }
+            .experience { grid-template-columns:1fr; }
+            article { padding:22px; }
+            section { margin-top:36px; padding-top:26px; }
         }
     </style>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
@@ -42,7 +57,7 @@
 <body>
     <header>
         <h1>Neelesh Reddi</h1>
-        <p>Personal Homepage</p>
+        <p>Data Science · Software Development · UNC Charlotte</p>
     </header>
     <main>
         <h2>Welcome</h2>
@@ -50,15 +65,60 @@
             <img src="images/neelesh-monogram.svg" alt="NR initials inside a geometric arch" width="320" height="280">
             <figcaption>A personal mark made from my initials.</figcaption>
         </figure>
-        <p>Hi, I'm Neelesh. I'm a student at the University of North Carolina at Charlotte.</p>
-        <p>Welcome to my personal homepage. This is my starting point on the web and a place to introduce myself.</p>
-        <h3>My Interests</h3>
-        <p>Outside of school, I enjoy chess, music, and gaming.</p>
-        <h3>Explore My Work</h3>
-        <p><a href="itis3135/">Visit my ITIS3135 course site</a></p>
+
+        <p>Hi, I'm Neelesh. I'm a third-year student at the University of North Carolina at Charlotte, majoring in Data Science and minoring in Software Development.</p>
+        <p>I'm interested in how we can use data and software to make complicated information easier to understand. This is a place to share what I'm learning, the work I've been involved in, and a little about life outside my laptop.</p>
+        <p><a href="https://github.com/nreddi2">Explore my GitHub</a> · <a href="https://www.linkedin.com/in/neelesh-reddi-b532b234b/">Connect on LinkedIn</a></p>
+
+        <section>
+            <h3>A Little About Me</h3>
+            <p>I was born in India and spent most of my childhood in California before moving to North Carolina in 2021. I'm now building on my interest in technology through data science and software development.</p>
+            <p>Machine learning and AI especially interest me. I'm drawn to natural language processing: working with unstructured text and turning it into something useful. I'd like to build tools that help people navigate complex information while being clear about uncertainty and the limits of the data.</p>
+        </section>
+
+        <!-- The experience class arranges the two project articles in a responsive grid. -->
+        <section class="experience">
+            <h3>Experience &amp; Projects</h3>
+            <article>
+                <h4>Data4Youth</h4>
+                <p>I cofounded Data4Youth, a nonprofit organization that introduced data science to younger students. I helped with the organization's website and with explaining technical ideas to students.</p>
+                <p>That experience brought together two things I enjoy: building something useful and helping other people understand it.</p>
+            </article>
+            <article>
+                <h4>Mobile App Development</h4>
+                <p>My mobile app work gave me practice building features, testing them, and fixing what didn't work. It also gave me experience turning an idea into something people could interact with.</p>
+                <p>I'm continuing to develop those skills as I learn more about web applications and user interfaces.</p>
+            </article>
+        </section>
+
+        <section>
+            <h3>Beyond the Screen</h3>
+            <p>Outside of school and projects, I make time for chess, music, and gaming. They are a few of the interests that show up in my personal and creative work.</p>
+        </section>
+
+        <section>
+            <h3>What I'm Learning</h3>
+            <ul>
+                <li><strong>Data mining and modeling:</strong> exploring patterns in data and how models connect to real-world questions.</li>
+                <li><strong>Front-end development:</strong> building responsive pages with HTML, CSS, and JavaScript, and checking accessibility along the way.</li>
+                <li><strong>Clear communication:</strong> explaining how something works, what the results mean, and where there is still uncertainty.</li>
+            </ul>
+            <p><a href="itis3135/">Explore my ITIS3135 course site</a> for my web development assignments and experiments.</p>
+        </section>
+
+        <section>
+            <h3>Find Me Online</h3>
+            <p>You can find my code, learning progress, and professional profile here.</p>
+            <nav aria-label="Public profiles">
+                <a href="https://github.com/nreddi2">GitHub</a>
+                <a href="https://www.linkedin.com/in/neelesh-reddi-b532b234b/">LinkedIn</a>
+                <a href="https://www.freecodecamp.org/nreddi1">freeCodeCamp</a>
+                <a href="https://www.codecademy.com/profiles/nreddi">Codecademy</a>
+            </nav>
+        </section>
     </main>
     <footer>
-        <p><em>A little about me, a place to begin.</em></p>
+        <p><em>Learning, building, and making sense of things.</em></p>
         <p>Page created by <a href="itis3135/reddidesigns.com/">Reddi Designs</a> ©2026</p>
     </footer>
     <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
