@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neelesh Reddi's Noble Raven | ITIS3135 | Everything Pictures</title>
+<link rel="icon" type="image/svg+xml" href="images/noble-raven.svg">
+<link rel="stylesheet" href="styles/default.css">
+<link rel="stylesheet" href="styles/pictures.css">
+<script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head><body>
+<!-- The div include placeholders load the common header/footer. The pictures class scopes this page's styles. Image-comparison divs create keyboard-scrollable side-by-side experiments. Image classes specify deliberate distortions and equal-sized enlargement comparisons, and image-links keeps the format links together. The two inline styles demonstrate CSS-only downsizing as required by M11. Image links open new tabs as explicitly required by this assignment. -->
+<div data-include="components/header.html"></div>
+<main class="pictures">
+<h2>Everything Pictures</h2>
+<p>This page compares file formats, pixel dimensions, file size, and aspect ratio using a chess photo and my own geometry photo. It demonstrates why changing an image's display size differs from editing its pixels, and why stretching or enlarging an image can damage its appearance. File sizes use decimal megabytes (1 MB = 1,000,000 bytes).</p>
+<section>
+<h3>Wooden Chess Pieces from Pexels</h3>
+<p>This photo connects to my interest in chess, and the wood grain and edges of the pieces make changes in detail easy to compare. It was taken by <a href="https://www.pexels.com/@reinis-bruzitis-2153679369/">Reinis Brūzītis</a>, whose Pexels profile identifies him as a photographer from Latvia. <a href="https://www.pexels.com/photo/close-up-of-wooden-chess-pieces-on-board-37144038/">View the original Pexels photo and photographer credit</a>.</p>
+<p>The source JPEG is <strong>6000 × 4000 pixels</strong> (24,000,000 pixels), 1.256 MB. It is a free Pexels photo; the full-resolution download is preserved here.</p>
+<article>
+<h4>Original Image and Format Variations</h4>
+<p>Open the original JPEG or a full-resolution conversion in a new tab. Each conversion starts from the original, preserving its 6000 × 4000 dimensions.</p>
+<nav class="image-links" aria-label="Chess image formats"><a href="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels.jpg" target="_blank" rel="noopener">Original JPEG</a> | <a href="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels.gif" target="_blank" rel="noopener">Original as GIF</a> | <a href="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels-grayscale.png" target="_blank" rel="noopener">Grayscale PNG</a> | <a href="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels-black-and-white.png" target="_blank" rel="noopener">Black-and-White PNG</a></nav>
+<figure><img src="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels-600x400.jpg" alt="Wooden chess pieces and fine wood grain on a brown and dark chessboard" width="600" height="400" loading="lazy"  class="chess-natural-size"><figcaption>Proportional preview of the source photo; the links above open the full-resolution files.</figcaption></figure>
+<ul><li>JPEG: 1.256 MB. Lossy compression suits continuous-tone photos.</li><li>GIF: 9.861 MB. A palette of at most 256 colors can reduce smooth gradients; conversion does not guarantee a smaller file.</li><li>Grayscale PNG: 12.758 MB. Gray tones preserve light and shadow without color.</li><li>Black-and-white PNG: 0.230 MB. A threshold of 128 leaves only black or white pixels; midtones disappear. PNG stores these results losslessly.</li></ul>
+</article>
+<article><h4>Downsizing Images with CSS</h4>
+<p>This named copy contains the original 6000 × 4000 pixels and still uses 1.256 MB. Inline CSS displays it at 600 pixels wide, with automatic proportional height (about 400 pixels). On small screens it scales down further to fit. CSS does not reduce the download size.</p>
+<figure><img src="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels-css-600x400.jpg" alt="Wooden chess pieces and fine wood grain on a brown and dark chessboard" width="6000" height="4000" loading="lazy" style="width:600px; height:auto;"><figcaption>Original pixels displayed smaller: 600 × approximately 400.</figcaption></figure>
+</article>
+<article><h4>Proper Reduction of Image with Editor</h4>
+<p>Sharp, a pixel-based image-processing tool, resampled a fresh copy to 600 × 400 pixels and saved it as JPEG at quality 90. The actual file is now 0.041 MB (96.8% smaller in bytes). The aspect ratio is preserved to the nearest whole pixel.</p>
+<figure><img src="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels-600x400.jpg" alt="Wooden chess pieces and fine wood grain on a brown and dark chessboard" width="600" height="400" loading="lazy"  class="chess-natural-size"><figcaption>Actual 600 × 400 file, displayed proportionally.</figcaption></figure>
+<p>Halving both dimensions leaves one quarter of the pixels. Compressed file size does not necessarily fall by exactly three quarters because content, format, metadata, and compression settings also matter.</p>
+</article>
+<article><h4>Improper Image Proportions with CSS</h4>
+<p>These four copies retain the 600 × 400 source pixels. CSS deliberately changes only one dimension at a time. The second reduction leaves about 44.9% of that dimension, rather than 34%. Each filename records the intended CSS dimensions.</p>
+<p>Scroll horizontally to compare all four images. Keyboard users can focus the comparison and use the arrow keys. Fixed sizes preserve the experiment instead of silently shrinking each example to fit.</p>
+<div class="image-comparison" role="region" aria-label="chess distorted image comparison" tabindex="0"><figure><img src="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels-css-600x268.jpg" alt="Wooden chess pieces and fine wood grain on a brown and dark chessboard" width="600" height="400" loading="lazy" class="chess-height-67"><figcaption>600 × 268 CSS pixels. Height reduced by 33%; width stays at 600 pixels. The file still contains 600 × 400 pixels.</figcaption></figure>
+<figure><img src="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels-css-600x180.jpg" alt="Wooden chess pieces and fine wood grain on a brown and dark chessboard" width="600" height="400" loading="lazy" class="chess-height-45"><figcaption>600 × 180 CSS pixels. Height reduced by another 33% from the previous example; width stays at 600 pixels. The file still contains 600 × 400 pixels.</figcaption></figure>
+<figure><img src="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels-css-402x400.jpg" alt="Wooden chess pieces and fine wood grain on a brown and dark chessboard" width="600" height="400" loading="lazy" class="chess-width-67"><figcaption>402 × 400 CSS pixels. Width reduced by 33%; height stays unchanged. The file still contains 600 × 400 pixels.</figcaption></figure>
+<figure><img src="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels-css-269x400.jpg" alt="Wooden chess pieces and fine wood grain on a brown and dark chessboard" width="600" height="400" loading="lazy" class="chess-width-45"><figcaption>269 × 400 CSS pixels. Width reduced by another 33% from the previous example; height stays unchanged. The file still contains 600 × 400 pixels.</figcaption></figure></div>
+</article>
+<article><h4>Improper Enlarging with CSS</h4>
+<p>The reduced 600 × 400 file is compared with a second copy reduced to 25% of each dimension: 150 × 100, 0.007 MB. Both display at the same 600 × 400 CSS size. Enlarging the smaller copy cannot restore discarded detail.</p>
+<div class="image-comparison" role="region" aria-label="chess enlargement comparison" tabindex="0">
+<figure><img src="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels-600x400.jpg" alt="Wooden chess pieces and fine wood grain on a brown and dark chessboard" width="600" height="400" loading="lazy"  class="chess-natural-size"><figcaption>600 × 400 source at its natural display size.</figcaption></figure>
+<figure><img src="images/close-up-of-wooden-chess-pieces-on-board-37144038@reinis-bruzitis_pexels-150x100.jpg" alt="Wooden chess pieces and fine wood grain on a brown and dark chessboard" width="600" height="400" loading="lazy"  class="chess-natural-size"><figcaption>150 × 100 source enlarged to 600 × 400: compare edges and fine texture.</figcaption></figure>
+</div></article>
+</section>
+<hr>
+<section>
+<h3>A Round Object Beside My Hand</h3>
+<p>My photo places a round white object beside my hand on a textured surface. The circle provides a geometric reference, while my fingers make changes in proportions especially noticeable. Photo credit: Neelesh Reddi.</p>
+<p>The source JPEG is <strong>959 × 1280 pixels</strong> (1,227,520 pixels), 0.208 MB. This is the file supplied for this page; no higher-resolution phone original was available.</p>
+<article>
+<h4>Original Image and Format Variations</h4>
+<p>Open the original JPEG or a full-resolution conversion in a new tab. Each conversion starts from the original, preserving its 959 × 1280 dimensions.</p>
+<nav class="image-links" aria-label="Personal image formats"><a href="images/round-white-object-beside-hand@neelesh-reddi.jpg" target="_blank" rel="noopener">Original JPEG</a> | <a href="images/round-white-object-beside-hand@neelesh-reddi.gif" target="_blank" rel="noopener">Original as GIF</a> | <a href="images/round-white-object-beside-hand@neelesh-reddi-grayscale.png" target="_blank" rel="noopener">Grayscale PNG</a> | <a href="images/round-white-object-beside-hand@neelesh-reddi-black-and-white.png" target="_blank" rel="noopener">Black-and-White PNG</a></nav>
+<figure><img src="images/round-white-object-beside-hand@neelesh-reddi-600x801.jpg" alt="A round white object beside my hand on a wood-grain surface" width="600" height="801" loading="lazy"  class="hand-natural-size"><figcaption>Proportional preview of the source photo; the links above open the full-resolution files.</figcaption></figure>
+<ul><li>JPEG: 0.208 MB. Lossy compression suits continuous-tone photos.</li><li>GIF: 0.654 MB. A palette of at most 256 colors can reduce smooth gradients; conversion does not guarantee a smaller file.</li><li>Grayscale PNG: 0.864 MB. Gray tones preserve light and shadow without color.</li><li>Black-and-white PNG: 0.025 MB. A threshold of 128 leaves only black or white pixels; midtones disappear. PNG stores these results losslessly.</li></ul>
+</article>
+<article><h4>Downsizing Images with CSS</h4>
+<p>This named copy contains the original 959 × 1280 pixels and still uses 0.208 MB. Inline CSS displays it at 600 pixels wide, with automatic proportional height (about 801 pixels). On small screens it scales down further to fit. CSS does not reduce the download size.</p>
+<figure><img src="images/round-white-object-beside-hand@neelesh-reddi-css-600x801.jpg" alt="A round white object beside my hand on a wood-grain surface" width="959" height="1280" loading="lazy" style="width:600px; height:auto;"><figcaption>Original pixels displayed smaller: 600 × approximately 801.</figcaption></figure>
+</article>
+<article><h4>Proper Reduction of Image with Editor</h4>
+<p>Sharp, a pixel-based image-processing tool, resampled a fresh copy to 600 × 801 pixels and saved it as JPEG at quality 90. The actual file is now 0.093 MB (55.3% smaller in bytes). The aspect ratio is preserved to the nearest whole pixel.</p>
+<figure><img src="images/round-white-object-beside-hand@neelesh-reddi-600x801.jpg" alt="A round white object beside my hand on a wood-grain surface" width="600" height="801" loading="lazy"  class="hand-natural-size"><figcaption>Actual 600 × 801 file, displayed proportionally.</figcaption></figure>
+<p>Halving both dimensions leaves one quarter of the pixels. Compressed file size does not necessarily fall by exactly three quarters because content, format, metadata, and compression settings also matter.</p>
+</article>
+<article><h4>Improper Image Proportions with CSS</h4>
+<p>These four copies retain the 600 × 801 source pixels. CSS deliberately changes only one dimension at a time. The second reduction leaves about 44.9% of that dimension, rather than 34%. Each filename records the intended CSS dimensions.</p>
+<p>Scroll horizontally to compare all four images. Keyboard users can focus the comparison and use the arrow keys. Fixed sizes preserve the experiment instead of silently shrinking each example to fit.</p>
+<div class="image-comparison" role="region" aria-label="hand distorted image comparison" tabindex="0"><figure><img src="images/round-white-object-beside-hand@neelesh-reddi-css-600x537.jpg" alt="A round white object beside my hand on a wood-grain surface" width="600" height="801" loading="lazy" class="hand-height-67"><figcaption>600 × 537 CSS pixels. Height reduced by 33%; width stays at 600 pixels. The file still contains 600 × 801 pixels.</figcaption></figure>
+<figure><img src="images/round-white-object-beside-hand@neelesh-reddi-css-600x360.jpg" alt="A round white object beside my hand on a wood-grain surface" width="600" height="801" loading="lazy" class="hand-height-45"><figcaption>600 × 360 CSS pixels. Height reduced by another 33% from the previous example; width stays at 600 pixels. The file still contains 600 × 801 pixels.</figcaption></figure>
+<figure><img src="images/round-white-object-beside-hand@neelesh-reddi-css-402x801.jpg" alt="A round white object beside my hand on a wood-grain surface" width="600" height="801" loading="lazy" class="hand-width-67"><figcaption>402 × 801 CSS pixels. Width reduced by 33%; height stays unchanged. The file still contains 600 × 801 pixels.</figcaption></figure>
+<figure><img src="images/round-white-object-beside-hand@neelesh-reddi-css-269x801.jpg" alt="A round white object beside my hand on a wood-grain surface" width="600" height="801" loading="lazy" class="hand-width-45"><figcaption>269 × 801 CSS pixels. Width reduced by another 33% from the previous example; height stays unchanged. The file still contains 600 × 801 pixels.</figcaption></figure></div>
+</article>
+<article><h4>Improper Enlarging with CSS</h4>
+<p>The reduced 600 × 801 file is compared with a second copy reduced to 25% of each dimension: 150 × 200, 0.008 MB. Both display at the same 600 × 801 CSS size. Enlarging the smaller copy cannot restore discarded detail.</p>
+<div class="image-comparison" role="region" aria-label="hand enlargement comparison" tabindex="0">
+<figure><img src="images/round-white-object-beside-hand@neelesh-reddi-600x801.jpg" alt="A round white object beside my hand on a wood-grain surface" width="600" height="801" loading="lazy"  class="hand-natural-size"><figcaption>600 × 801 source at its natural display size.</figcaption></figure>
+<figure><img src="images/round-white-object-beside-hand@neelesh-reddi-150x200.jpg" alt="A round white object beside my hand on a wood-grain surface" width="600" height="801" loading="lazy"  class="hand-natural-size"><figcaption>150 × 200 source enlarged to 600 × 801: compare edges and fine texture.</figcaption></figure>
+</div></article>
+</section>
+<p><strong>Validation note:</strong> M11 explicitly asks for original-image links in new tabs and for displaying a large original with CSS-only resizing. The general same-site tab rule and the image-size optimization check flag those required demonstrations. The originals and tab behavior are kept intact for this assignment.</p>
+<p><strong>Tools and assistance:</strong> ChatGPT helped create this page, captions, and comparison code. Sharp performed the format conversions and pixel resizing. Both source photographs are real photographs, not AI-generated images.</p>
+</main>
+<div data-include="components/footer.html"></div>
+<script src="scripts/include-navigation.js"></script>
+<script src="scripts/HTMLInclude.min.js"></script>
+<script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body></html>

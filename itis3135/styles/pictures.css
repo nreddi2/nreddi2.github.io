@@ -1,0 +1,24 @@
+.pictures article { clear:both; margin:28px 0 44px; }
+h4 { font-family:"Trebuchet MS", sans-serif; font-size:1.15rem; margin:0 0 16px; }
+.pictures figure { float:none; width:600px; max-width:100%; margin:20px 0; text-align:left; }
+.pictures figcaption { max-width:600px; }
+.pictures hr { border:0; border-top:2px solid #b69555; margin:48px 0; }
+.image-links { display:flex; flex-wrap:wrap; gap:8px 16px; margin:16px 0 24px; }
+.image-comparison { display:flex; gap:24px; overflow-x:auto; padding:0 0 18px; margin:18px 0; }
+.image-comparison figure { flex:0 0 600px; max-width:none; }
+.image-comparison img { max-width:none; margin:0; }
+.image-comparison:focus-visible { outline:3px solid #704817; outline-offset:4px; }
+.pictures .chess-height-67 { width:600px; height:268px; }
+.pictures .chess-height-45 { width:600px; height:180px; }
+.pictures .chess-width-67 { width:402px; height:400px; }
+.pictures .chess-width-45 { width:269px; height:400px; }
+.pictures .hand-height-67 { width:600px; height:537px; }
+.pictures .hand-height-45 { width:600px; height:360px; }
+.pictures .hand-width-67 { width:402px; height:801px; }
+.pictures .hand-width-45 { width:269px; height:801px; }
+.image-comparison .chess-natural-size { width:600px; height:400px; }
+.image-comparison .hand-natural-size { width:600px; height:801px; }
+@media (max-width:650px) {
+    .pictures figure { margin-left:0; }
+    .image-links { gap:6px 12px; }
+}
