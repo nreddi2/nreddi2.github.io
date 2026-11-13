@@ -1,0 +1,83 @@
+{
+  "firstName": "Neelesh",
+  "middleName": "",
+  "nickname": "",
+  "lastName": "Reddi",
+  "acknowledgment": "I understand that this is a public document, and I won't put anything here I wouldn't want anyone to see.",
+  "acknowledgmentDate": "2026-11-09",
+  "prettyNameDivider": "~",
+  "adjectives": "Noble",
+  "animal": "Raven",
+  "img": "images/neelesh-waterfall.jpg",
+  "pictureAlt": "Neelesh beside a rocky waterfall, with his hair blowing in the wind",
+  "caption": "At a windy waterfall",
+  "quote": "Exactly what you run from you end up chasing.",
+  "quoteAuthor": "Jerrod Carmichael",
+  "funnyItem": "",
+  "somethingToShare": "",
+  "personalInfo": {
+    "statement": "Hey there, I'm Neelesh Reddi! I am a third-year student at the University of North Carolina at Charlotte, majoring in Data Science and minoring in Software Development. I'm interested in machine learning and AI, especially natural language processing and the challenge of turning unstructured data into something useful. In the future, I want to build tools that help people make sense of complicated information without hiding the uncertainty that comes with real data. Outside of school, I enjoy chess, music, and gaming.",
+    "personalBackground": "I was born in India and spent most of my childhood in California. I moved to Raleigh in 2021.",
+    "professionalBackground": "I cofounded Data4Youth, a nonprofit organization where I helped introduce data science to younger students and worked on the organization's website. I have also worked on mobile app projects, building features, testing them, and fixing issues. These experiences showed me that explaining an idea can matter as much as building it.",
+    "academicBackground": "I am a third-year Data Science major with a minor in Software Development at UNC Charlotte.",
+    "primaryWorkComputer": "ASUS Zephyrus G14 laptop running Windows 11.",
+    "primaryWorkLocation": "I get most of my work done at my apartment.",
+    "alternateComputerLocation": "If my laptop were unavailable, I would use a desktop computer in my apartment's study center. The campus library is another backup work location."
+  },
+  "courses": [
+    {
+      "department": "ITCS",
+      "courseNumber": "3162",
+      "courseTitle": "Introduction to Data Mining",
+      "reasonForTaking": "Required for my major."
+    },
+    {
+      "department": "DTSC",
+      "courseNumber": "2301",
+      "courseTitle": "Modeling and Society A",
+      "reasonForTaking": "Required for my major."
+    },
+    {
+      "department": "DTSC",
+      "courseNumber": "2302",
+      "courseTitle": "Modeling and Society B",
+      "reasonForTaking": "Required for my major."
+    },
+    {
+      "department": "ITIS",
+      "courseNumber": "3135",
+      "courseTitle": "Front-End Web Application Development",
+      "reasonForTaking": "An elective that fulfills a requirement for my minor."
+    }
+  ],
+  "footerLinks": [
+    {
+      "label": "CLT Web",
+      "url": "https://webpages.charlotte.edu/nreddi1/"
+    },
+    {
+      "label": "GitHub.io",
+      "url": "https://nreddi2.github.io/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/nreddi2"
+    },
+    {
+      "label": "Course.io",
+      "url": "https://nreddi2.github.io/itis3135/"
+    },
+    {
+      "label": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/nreddi1"
+    },
+    {
+      "label": "Codecademy",
+      "url": "https://www.codecademy.com/profiles/nreddi"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/neelesh-reddi-b532b234b/"
+    }
+  ]
+}
