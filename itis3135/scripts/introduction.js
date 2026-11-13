@@ -94,10 +94,7 @@ let imageVersion = 0;
 let uploadedImage = null;
 let nextCourse = 4;
 let submittedData = null;
-function syncFooter() {
-    const nav = document.querySelector('footer nav[aria-label="My sites and profiles"]');
-    if (!nav) return;
-    const links = submittedData ? submittedData.footerLinks : introductionDefaults.footerLinks;
+function renderLinks(nav, links) {
     nav.replaceChildren();
     links.forEach((link, index) => {
         if (index) nav.append(' | ');
@@ -106,6 +103,12 @@ function syncFooter() {
         anchor.textContent = link.label;
         nav.append(anchor);
     });
+}
+function syncFooter() {
+    const nav = document.querySelector('footer nav[aria-label="My sites and profiles"]');
+    if (!nav) return;
+    const links = submittedData ? submittedData.footerLinks : introductionDefaults.footerLinks;
+    renderLinks(nav, links);
 }
 const footerObserver = new MutationObserver(() => {
     if (document.querySelector('footer')) {
@@ -116,6 +119,7 @@ const footerObserver = new MutationObserver(() => {
 if (document.querySelector('footer')) syncFooter();
 else footerObserver.observe(document.body, { childList:true, subtree:true });
 function resetForm(clear) {
+    form.querySelectorAll('[data-generated]').forEach((label) => label.remove());
     imageVersion += 1;
     uploadedImage = null;
     courseFields.innerHTML = initialCourses;
@@ -230,47 +234,20 @@ function setBullet(li, text) {
     const strong = li.querySelector('strong').cloneNode(true);
     li.replaceChildren(strong, document.createTextNode(' ' + text));
 }
-form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    Array.from(form.elements).forEach((field) => {
-        if (field.required && typeof field.value === 'string' && !field.value.trim()) field.setCustomValidity('Please complete this required field.');
-        if (field.type === 'url' && field.value && !/^https?:/i.test(field.value)) field.setCustomValidity('Use an http:// or https:// URL.');
-    });
-    if (!form.reportValidity()) return;
-    if (form.elements.pictureUpload.files.length && !uploadedImage) {
-        message.textContent = 'Wait for the photo to finish loading, or choose another image.';
-        return;
-    }
-    const date = form.elements.acknowledgmentDate.value;
-    if (Number.isNaN(Date.parse(date)) || new Date(date).toISOString().slice(0,10) !== date) {
-        form.elements.acknowledgmentDate.setCustomValidity("Enter a real date in YYYY-MM-DD format.");
-        form.elements.acknowledgmentDate.reportValidity();
-        return;
-    }
-    const data = collectData();
-    let dimensions = uploadedImage;
-    if (!dimensions) {
-        try {
-            const url = new URL(data.img, location.href);
-            if (!['http:','https:'].includes(url.protocol)) throw new Error('Unsupported image address');
-            const preview = new Image();
-            preview.src = url.href;
-            await preview.decode();
-            dimensions = {width:preview.naturalWidth,height:preview.naturalHeight};
-        } catch (error) {
-            form.elements.img.setCustomValidity('Enter an image address that loads, or upload a photo.');
-            form.elements.img.reportValidity();
-            return;
-        }
-    }
+function introductionContent(data, dimensions) {
     const fragment = document.getElementById('introductionTemplate').content.cloneNode(true);
     const name = [data.firstName, data.middleName, data.nickname ? '"'+data.nickname+'"' : '', data.lastName].filter(Boolean).join(' ');
     fragment.querySelector('h6').textContent = name+' '+data.prettyNameDivider+' '+data.adjectives+' '+data.animal;
     const image = fragment.querySelector('img');
     image.src = data.img;
     image.alt = data.pictureAlt;
-    image.width = dimensions.width;
-    image.height = dimensions.height;
+    if (dimensions) {
+        image.width = dimensions.width;
+        image.height = dimensions.height;
+    } else if (data.img !== introductionDefaults.img) {
+        image.removeAttribute('width');
+        image.removeAttribute('height');
+    }
     fragment.querySelector('figcaption').textContent = data.caption;
     fragment.querySelector('p').textContent = data.personalInfo.statement;
     const list = fragment.querySelector('ul');
@@ -294,6 +271,46 @@ form.addEventListener('submit', async (event) => {
     });
     fragment.querySelector('blockquote p').textContent = '"'+data.quote+'"';
     fragment.querySelector('blockquote em').textContent = '– '+data.quoteAuthor;
+    return fragment;
+}
+function validIntroduction() {
+    Array.from(form.elements).forEach((field) => {
+        if (field.required && typeof field.value === 'string' && !field.value.trim()) field.setCustomValidity('Please complete this required field.');
+        if (field.type === 'url' && field.value && !/^https?:/i.test(field.value)) field.setCustomValidity('Use an http:// or https:// URL.');
+    });
+    if (!form.reportValidity()) return false;
+    if (form.elements.pictureUpload.files.length && !uploadedImage) {
+        message.textContent = 'Wait for the photo to finish loading, or choose another image.';
+        return false;
+    }
+    const date = form.elements.acknowledgmentDate.value;
+    if (Number.isNaN(Date.parse(date)) || new Date(date).toISOString().slice(0,10) !== date) {
+        form.elements.acknowledgmentDate.setCustomValidity("Enter a real date in YYYY-MM-DD format.");
+        form.elements.acknowledgmentDate.reportValidity();
+        return false;
+    }
+    return true;
+}
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!validIntroduction()) return;
+    const data = collectData();
+    let dimensions = uploadedImage;
+    if (!dimensions) {
+        try {
+            const url = new URL(data.img, location.href);
+            if (!['http:','https:'].includes(url.protocol)) throw new Error('Unsupported image address');
+            const preview = new Image();
+            preview.src = url.href;
+            await preview.decode();
+            dimensions = {width:preview.naturalWidth,height:preview.naturalHeight};
+        } catch (error) {
+            form.elements.img.setCustomValidity('Enter an image address that loads, or upload a photo.');
+            form.elements.img.reportValidity();
+            return;
+        }
+    }
+    const fragment = introductionContent(data, dimensions);
     submittedData = data;
     main.replaceChildren(fragment);
     syncFooter();
@@ -307,4 +324,70 @@ document.getElementById('resetIntroduction').addEventListener('click', (event) =
     actions.hidden = true;
     resetForm(false);
     form.elements.firstName.focus();
+});
+
+function htmlSource(data) {
+    const page = document.implementation.createHTMLDocument(document.title);
+    page.documentElement.lang = 'en';
+    document.head.querySelectorAll('meta, link[rel="stylesheet"], link[rel="icon"]').forEach((element) => {
+        page.head.append(element.cloneNode(true));
+    });
+    const header = document.querySelector('header');
+    if (header) page.body.append(header.cloneNode(true));
+    const content = page.createElement('main');
+    content.append(introductionContent(data, uploadedImage));
+    const acknowledgment = page.createElement('p');
+    acknowledgment.textContent = data.acknowledgment+' — '+data.acknowledgmentDate;
+    const footer = page.createElement('footer');
+    const nav = page.createElement('nav');
+    nav.setAttribute('aria-label', 'My sites and profiles');
+    renderLinks(nav, data.footerLinks);
+    footer.append(acknowledgment, nav);
+    page.body.append(content, footer);
+    return '<!DOCTYPE html>\n'+page.documentElement.outerHTML;
+}
+
+function xmlSource(data) {
+    const xml = document.implementation.createDocument(null, 'introduction');
+    function appendValue(parent, key, value, depth) {
+        parent.append('\n'+'  '.repeat(depth));
+        const element = xml.createElement(key);
+        parent.append(element);
+        if (typeof value === 'string') {
+            element.textContent = value;
+            return;
+        }
+        if (Array.isArray(value)) {
+            const itemName = key === 'courses' ? 'course' : 'link';
+            value.forEach((item) => appendValue(element, itemName, item, depth+1));
+        } else {
+            Object.entries(value).forEach(([name, item]) => appendValue(element, name, item, depth+1));
+        }
+        element.append('\n'+'  '.repeat(depth));
+    }
+    Object.entries(data).forEach(([key, value]) => appendValue(xml.documentElement, key, value, 1));
+    xml.documentElement.append('\n');
+    return '<?xml version="1.0" encoding="UTF-8"?>\n'+new XMLSerializer().serializeToString(xml);
+}
+
+const sourceFormats = {HTML:htmlSource, JSON:(data) => JSON.stringify(data, null, 2), XML:xmlSource};
+const exportControls = document.getElementById('exportControls');
+exportControls.addEventListener('click', (event) => {
+    const format = event.target.dataset.format;
+    if (!format || !validIntroduction()) return;
+    let output = document.getElementById('source'+format);
+    if (!output) {
+        const label = document.createElement('label');
+        label.dataset.generated = format;
+        label.textContent = format+' source';
+        output = document.createElement('textarea');
+        output.id = 'source'+format;
+        output.rows = 12;
+        output.readOnly = true;
+        output.spellcheck = false;
+        label.append(output);
+        exportControls.append(label);
+    }
+    output.value = sourceFormats[format](collectData());
+    output.focus();
 });
