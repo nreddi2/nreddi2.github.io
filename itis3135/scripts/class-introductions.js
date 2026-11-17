@@ -65,6 +65,10 @@ function filterEntries() {
     status.textContent = visible ? 'Showing '+visible+' of '+entries.length+' introductions.' : 'No introductions match your search. Try another name or mascot.';
 }
 async function loadIntroductions() {
+    if (location.hostname === 'nreddi2.github.io') {
+        location.replace('https://webpages.charlotte.edu/nreddi1/itis3135/class_introductions.html');
+        return;
+    }
     refresh.disabled = true;
     search.disabled = true;
     directory.setAttribute('aria-busy', 'true');
