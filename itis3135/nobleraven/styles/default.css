@@ -34,7 +34,7 @@ caption { text-align:left; margin-bottom:14px; }
 th, td { border-bottom:1px solid #6b829d; padding:14px 10px; }
 thead { background:#253d59; }
 footer { border-top:1px solid #6b829d; background:#122238; font-size:15px; }
-footer > p:first-child { font-size:1.5rem; color:#edb092; }
+footer > p:first-child { font-size:1.1rem; color:#edb092; }
 footer p { margin:0 0 10px; }
 
 nav a { display:inline-block; }
