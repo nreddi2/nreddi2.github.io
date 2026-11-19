@@ -9,7 +9,7 @@
 <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- Include divs load this shop's shared header/footer. The feature class groups the opening copy and photograph; the button class identifies the main browsing link. -->
+<!-- Include divs load this shop's shared header/footer. The feature class groups the opening copy and photograph; the button class identifies the main browsing link. Form IDs connect labels, JavaScript controls, and accessible result messages. -->
 <div data-include="components/header.html"></div>
 <main>
 <h2>Noble Raven Club Hours</h2>
@@ -21,9 +21,23 @@
 <p>First-flight sessions focus on setup and movement. Open-table evenings welcome people who know the moves and want a friendly opponent, while puzzle Saturdays give pairs something to solve together. These example hours describe the business concept; there are no real events to book.</p>
 </section>
 <section><h3>Example Weekly Schedule</h3><table><caption>Noble Raven concept sessions</caption><thead><tr><th scope="col">Day</th><th scope="col">Time</th><th scope="col">Session</th></tr></thead><tbody><tr><th scope="row">Tuesday</th><td>4–6 p.m.</td><td>First Flight</td></tr><tr><th scope="row">Thursday</th><td>5–8 p.m.</td><td>Open Tables</td></tr><tr><th scope="row">Saturday</th><td>11 a.m.–2 p.m.</td><td>Puzzle Partners</td></tr></tbody></table></section>
+<section>
+<h3>Find Your Session</h3>
+<p>Filter the example schedule by your goal and available day. Try any day if your first choice has no matching session. These are concept sessions, not reservations.</p>
+<form id="session-finder">
+<label for="session-goal">What would you like to do?</label>
+<select id="session-goal" name="goal"><option value="all">Explore every session</option><option value="learn">Learn the basics</option><option value="play">Play a friendly game</option><option value="puzzle">Solve puzzles together</option></select>
+<label for="session-day">When are you available?</label>
+<select id="session-day" name="day"><option value="all">Any day</option><option value="Tuesday">Tuesday</option><option value="Thursday">Thursday</option><option value="Saturday">Saturday</option></select>
+<button type="submit">Find sessions</button>
+<p id="session-status" role="status">Choose your preferences to see matching sessions.</p>
+<ul id="session-results"></ul>
+</form>
+</section>
 </main>
 <div data-include="components/footer.html"></div>
 <script src="scripts/include.min.js"></script>
+<script src="scripts/shop.js"></script>
 <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" data-site="mascot" defer></script>
 </body>
 </html>

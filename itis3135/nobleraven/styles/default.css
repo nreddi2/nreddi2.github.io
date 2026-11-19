@@ -36,6 +36,22 @@ thead { background:#253d59; }
 footer { border-top:1px solid #6b829d; background:#122238; font-size:15px; }
 footer > p:first-child { font-size:1.5rem; color:#edb092; }
 footer p { margin:0 0 10px; }
+
+nav a { display:inline-block; }
+
+/* Native form controls share the shop palette; IDs connect labels, results, and JavaScript. */
+form { max-width:700px; }
+label { display:block; margin:14px 0 6px; }
+input, select, button { font:inherit; }
+select, input[type="number"] { box-sizing:border-box; display:block; width:100%; padding:10px; color:#172b45; background:#e8edf3; border:2px solid #6b829d; border-radius:3px; }
+input[type="radio"] { accent-color:#ffb599; width:20px; height:20px; vertical-align:middle; margin-right:8px; }
+button { cursor:pointer; background:#f5b89d; color:#172b45; border:2px solid #f5b89d; border-radius:3px; padding:10px 18px; margin:20px 8px 20px 0; font-weight:700; }
+button:hover { background:#ffe1d1; }
+input:focus-visible, select:focus-visible, button:focus-visible { outline:3px solid #ffb599; outline-offset:4px; }
+fieldset { min-width:0; margin:24px 0; padding:18px; border:1px solid #6b829d; }
+legend { padding:0 8px; font-weight:700; }
+[role="status"] { padding:16px; background:#122238; border-left:4px solid #f5b89d; }
+
 @media (max-width:720px) {
     header, main, footer { padding:26px 22px; }
     .feature { display:block; }
@@ -44,4 +60,3 @@ footer p { margin:0 0 10px; }
     table { font-size:14px; }
     th, td { padding:10px 6px; }
 }
-nav a { display:inline-block; }

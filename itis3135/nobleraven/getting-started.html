@@ -9,7 +9,7 @@
 <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- Include divs load this shop's shared header/footer. The feature class groups the opening copy and photograph; the button class identifies the main browsing link. -->
+<!-- Include divs load this shop's shared header/footer. The feature class groups the opening copy and photograph; the button class identifies the main browsing link. Form IDs connect labels, JavaScript controls, and accessible result messages. -->
 <div data-include="components/header.html"></div>
 <main>
 <h2>Noble Raven Getting Started</h2>
@@ -21,9 +21,29 @@
 <p>For the first practice game, skip the clock and explain your moves to one another. Use the notebook to record one position that surprised you. When a rule raises a question, pause and check it together before continuing; the kit is meant to support the conversation.</p>
 </section>
 <section><h3>A First-Night Routine</h3><ol><li>Set up together and identify every piece.</li><li>Try a few legal moves with the illustrated cards nearby.</li><li>Play a friendly game with time for questions.</li><li>Write down one thing to practice next time.</li></ol><p><a href="kits.html">Find a kit for your table</a></p></section>
+<section>
+<h3>Check Your First Moves</h3>
+<p>Try three quick questions before your first game. Select one answer for each question, then check your answers for a score and explanations. You can try again as often as you like.</p>
+<form id="chess-quiz">
+<fieldset><legend>1. Which square belongs in the near-right corner?</legend>
+<label><input type="radio" name="corner" value="light" required> A light square</label>
+<label><input type="radio" name="corner" value="dark"> A dark square</label></fieldset>
+<fieldset><legend>2. Where does the queen start?</legend>
+<label><input type="radio" name="queen" value="opposite" required> On the opposite color</label>
+<label><input type="radio" name="queen" value="same"> On her own color</label></fieldset>
+<fieldset><legend>3. Which piece can jump over other pieces?</legend>
+<label><input type="radio" name="jumper" value="bishop" required> The bishop</label>
+<label><input type="radio" name="jumper" value="knight"> The knight</label></fieldset>
+<button type="submit">Check my answers</button>
+<button type="reset">Try again</button>
+<p id="quiz-score" role="status">Your score will appear here.</p>
+<ol id="quiz-feedback"></ol>
+</form>
+</section>
 </main>
 <div data-include="components/footer.html"></div>
 <script src="scripts/include.min.js"></script>
+<script src="scripts/shop.js"></script>
 <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" data-site="mascot" defer></script>
 </body>
 </html>
